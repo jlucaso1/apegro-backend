@@ -1,5 +1,5 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
-import { Joke } from 'src/entities/joke.entity';
+import { Joke } from 'src/jokes/entities/joke.entity';
 import { JokesService } from './jokes.service';
 
 @Resolver((of) => Joke)
