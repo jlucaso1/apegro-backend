@@ -10,6 +10,7 @@ import { JokesModule } from './jokes/jokes.module';
       autoSchemaFile: true,
       playground: true,
       cors: true,
+      introspection: true,
     }),
     JokesModule,
   ],
