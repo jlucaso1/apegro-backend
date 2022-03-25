@@ -2,7 +2,11 @@ import { Field, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class Joke {
-  @Field((type) => Int)
+  constructor(data: Joke) {
+    Object.assign(this, data);
+  }
+
+  @Field((type) => String)
   id: string;
 
   @Field((type) => String)
