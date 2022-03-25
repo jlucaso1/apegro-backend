@@ -1,5 +1,6 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
 import { Joke } from 'src/jokes/entities/joke.entity';
+import { SearchJokesDto } from './dto/search-jokes.dto';
 import { JokesService } from './jokes.service';
 
 @Resolver((of) => Joke)
@@ -20,7 +21,7 @@ export class JokesResolver {
 
   @Query((returns) => [Joke])
   searchJokes(
-    @Args('query', { type: () => String }) query: string,
+    @Args({ type: () => SearchJokesDto }) { query }: SearchJokesDto,
   ): Promise<Joke[]> {
     return this.jokesService.searchJokes(query);
   }
