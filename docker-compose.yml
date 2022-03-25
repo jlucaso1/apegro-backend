@@ -4,7 +4,9 @@ services:
     dev_api:
         container_name: aprego_dev_api
         image: nestjs-api-dev:1.0.0
-        build: .
+        build: 
+            context: .
+            dockerfile: dev.Dockerfile
         entrypoint: sh -c "yarn && yarn start:dev"
         ports:
             - 3000:3000
@@ -12,3 +14,10 @@ services:
             - .:/home/node/app
             - /home/node/app/node_modules
         restart: unless-stopped
+    prod_api:
+        container_name: aprego_prod_api
+        image: nestjs-api-prod:1.0.0
+        build: .
+        entrypoint: sh -c "yarn start:prod"
+        ports:
+            - 3000:3000
