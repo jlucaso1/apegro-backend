@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-import { Joke } from 'src/jokes/entities/joke.entity';
+import { Joke } from './entities/joke.entity';
 
 @Injectable()
 export class JokesService {
