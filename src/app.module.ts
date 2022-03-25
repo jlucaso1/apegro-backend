@@ -9,6 +9,7 @@ import { JokesModule } from './jokes/jokes.module';
       driver: ApolloDriver,
       autoSchemaFile: true,
       playground: true,
+      cors: true,
     }),
     JokesModule,
   ],
