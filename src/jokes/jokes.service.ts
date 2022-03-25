@@ -9,12 +9,16 @@ export class JokesService {
   });
 
   async getRandomJoke(category?: string): Promise<Joke> {
-    const { data } = await this.api.get('random', {
-      params: {
-        category,
-      },
-    });
-    return new Joke({ ...data });
+    try {
+      const { data } = await this.api.get('random', {
+        params: {
+          category,
+        },
+      });
+      return new Joke({ ...data });
+    } catch {
+      throw new Error(`No jokes for category '${category}' found.`);
+    }
   }
 
   async getCategories(): Promise<string[]> {
