@@ -1,6 +1,6 @@
 <h1 align="center" >Back End to Apegro's challenge</h1>
 
-Repository link: https://github.com/jlucaso1/apegro-frontend
+Repository link: https://github.com/jlucaso1/apegro-backend
 
 ## Description
 
