@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     dev_api:
-        container_name: aprego_dev_api
+        container_name: apegro_dev_api
         image: nestjs-api-dev:1.0.0
         build: 
             context: .
@@ -15,7 +15,7 @@ services:
             - /home/node/app/node_modules
         restart: unless-stopped
     prod_api:
-        container_name: aprego_prod_api
+        container_name: apegro_prod_api
         image: nestjs-api-prod:1.0.0
         build: .
         entrypoint: sh -c "yarn start:prod"
